@@ -1,0 +1,5 @@
+
+.slider_labelSmall .unity-label {
+    flex-basis: 20%;
+    min-width: 40px;
+}

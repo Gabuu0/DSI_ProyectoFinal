@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Lab5" src="project://database/Assets/UIToolkit/Lab5.uxml?fileID=9197481963319205126&amp;guid=670184afa4acd5645a4959c5be723ffa&amp;type=3#Lab5" />
+    <Style src="project://database/Assets/UIToolkit/Lab4.uss?fileID=7433441132597879392&amp;guid=8700b32e4df21a847b0dd82784dec9ae&amp;type=3#Lab4" />
+    <ui:Instance template="Lab5" name="Lab5" />
+</ui:UXML>

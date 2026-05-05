@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Team" src="project://database/Assets/Resources/Team.uxml?fileID=9197481963319205126&amp;guid=0cac064f4803f9143a0ddf67e9ddbab5&amp;type=3#Team" />
+    <Style src="project://database/Assets/UIToolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=a3a55d2d9dbf3534cbb54504038b6108&amp;type=3#Proyect" />
+    <ui:VisualElement name="Proyect" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 100%; height: 100%; -unity-background-image-tint-color: rgb(255, 255, 255); display: flex;">
+        <ui:VisualElement name="Up" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 60%; flex-direction: row;">
+            <ui:VisualElement name="League" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 100%;">
+                <ui:VisualElement name="Table" style="flex-grow: 1; background-color: rgb(125, 125, 125); width: 100%; height: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; scale: 0.95 0.95; align-items: stretch; justify-content: center;">
+                    <ui:Instance template="Team" name="Team" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Stats" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 100%; flex-direction: row;">
+                <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 30%; height: 100%; justify-content: center; align-items: center; flex-shrink: 1; flex-basis: auto; flex-wrap: nowrap;">
+                    <ui:Button text="Goals" display-tooltip-when-elided="true" name="Goals" style="width: 90%; height: 25%; transform-origin: top; translate: 0 -15%;" />
+                    <ui:Button text="Assists" display-tooltip-when-elided="true" name="Assist" style="height: 25%; width: 90%; transform-origin: center; translate: 0 0;" />
+                    <ui:Button text="Goal/Assists" display-tooltip-when-elided="true" name="GA" style="transform-origin: bottom; width: 90%; height: 25%; translate: 0 15%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="MaxGA" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 70%; height: 100%;">
+                    <ui:VisualElement name="Table" style="flex-grow: 0; background-color: rgb(125, 125, 125); width: 100%; height: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; scale: 0.95 0.85; display: flex; flex-shrink: 1; align-items: center; justify-content: center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Down" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; height: 40%;">
+            <ui:VisualElement name="Sliders" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 65%; height: 100%; justify-content: center;">
+                <ui:SliderInt picking-mode="Ignore" label="Teams" value="2" high-value="8" low-value="2" name="Team" style="-unity-text-align: upper-center;" />
+                <ui:SliderInt picking-mode="Ignore" label="Players per team" value="5" high-value="11" low-value="5" name="Players" style="-unity-text-align: upper-center;" />
+                <ui:Slider picking-mode="Ignore" label="Color" value="42" high-value="100" name="Color" style="-unity-text-align: upper-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 35%; height: 100%;">
+                <ui:VisualElement name="SaveLoad" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; height: 50%; align-items: center; justify-content: center; align-self: flex-end;">
+                    <ui:Button text="Save" display-tooltip-when-elided="true" name="Save" style="width: 40%; height: 80%; white-space: nowrap; -unity-text-align: middle-center; transform-origin: left; translate: -10% 0;" />
+                    <ui:Button text="Load" display-tooltip-when-elided="true" name="Load" style="width: 40%; height: 80%; transform-origin: right; translate: 10% 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 50%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

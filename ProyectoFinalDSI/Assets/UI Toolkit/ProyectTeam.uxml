@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Stat" src="project://database/Assets/UIToolkit/Proyect/Stat.uxml?fileID=9197481963319205126&amp;guid=bee816e0f42877c478de55c06d7fef91&amp;type=3#Stat" />
+    <Style src="project://database/Assets/UIToolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=a3a55d2d9dbf3534cbb54504038b6108&amp;type=3#Proyect" />
+    <ui:VisualElement name="TeamEditor" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:VisualElement name="Team" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 50%; height: 100%; flex-shrink: 0;">
+            <ui:VisualElement name="TeamName" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 100%; height: 20%; flex-shrink: 0; flex-direction: row; flex-wrap: wrap;">
+                <ui:Toggle label="Modify" name="Modify" style="width: 20%; height: 50%; -unity-text-align: upper-left;" />
+                <ui:Label tabindex="-1" text="TeamName" display-tooltip-when-elided="true" name="TeamName" style="width: 75%; height: 50%; flex-wrap: nowrap; align-self: flex-start; align-items: flex-end; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 16%;" />
+                <ui:TextField picking-mode="Ignore" label="New Team Name" value="filler text" style="width: 90%; height: 35%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Players" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; width: 100%; height: 80%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="PlayerStats" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; width: 50%; height: 100%;">
+            <ui:VisualElement name="StatsLabel" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 20%; flex-shrink: 0; width: 100%;">
+                <ui:Label tabindex="-1" text="Name Default" display-tooltip-when-elided="true" name="PlayerName" style="width: 100%; height: 40%; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 18%;" />
+                <ui:Label tabindex="-1" text="Estadísticas" display-tooltip-when-elided="true" name="Stats" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 16%; width: 100%; height: 40%;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Stats" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; width: 100%; height: 80%;">
+                <ui:Instance template="Stat" name="StatVel" />
+                <ui:Instance template="Stat" name="StatDef" />
+                <ui:Instance template="Stat" name="StatRitmo" />
+                <ui:Instance template="Stat" name="StatPotencia" />
+                <ui:Instance template="Stat" name="StatRegates" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:SliderInt picking-mode="Ignore" label="Default" value="42" high-value="100" class="slider_labelSmall" />
+</ui:UXML>
