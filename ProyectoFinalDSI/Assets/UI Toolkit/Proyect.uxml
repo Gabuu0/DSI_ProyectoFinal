@@ -1,136 +1,136 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=9aa01882ddaf7874da3443e51e6dc084&amp;type=3#Proyect" />
-    <ui:VisualElement name="root">
-        <ui:VisualElement name="header">
-            <ui:Label name="headerTitle" text="LIGA MANAGER" />
-            <ui:Label name="headerLeague" text="Primera División" />
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="headerTitle" text="LIGA MANAGER" class="title" style="color: rgb(255, 175, 0);" />
+            <ui:Label name="headerLeague" text="Primera División" class="league" style="color: rgb(255, 175, 0);" />
         </ui:VisualElement>
-        <ui:VisualElement name="tabs">
-            <ui:Button name="tabLigaButton" text="  Liga" />
-            <ui:Button name="tabConvocados" text="  Convocados" />
-            <ui:Button name="tabEditor" text="  Editor" />
-            <ui:VisualElement name="tabIndicator" />
+        <ui:VisualElement name="tabs" class="barraTab">
+            <ui:Button name="tabLigaButton" text="  Liga" class="buttonTab buttonTab--active" style="color: rgb(255, 175, 0); border-bottom-color: rgb(255, 175, 0);" />
+            <ui:Button name="tabConvocados" text="  Convocados" class="buttonTab" />
+            <ui:Button name="tabEditor" text="  Editor" class="buttonTab" />
+            <ui:VisualElement name="tabIndicator" class="tab-indicator" />
         </ui:VisualElement>
-        <ui:VisualElement name="tabLiga">
-            <ui:VisualElement name="columnasLiga">
-                <ui:VisualElement name="columnaEquipos">
-                    <ui:Label text="TABLA DE POSICIONES" />
-                    <ui:VisualElement>
-                        <ui:Label text="EQUIPO" />
-                        <ui:Label text="PJ" />
-                        <ui:Label text="PG" />
-                        <ui:Label text="PE" />
-                        <ui:Label text="PP" />
-                        <ui:Label text="PTS" />
+        <ui:VisualElement name="tabLiga" class="tabContent tabContent--active">
+            <ui:VisualElement name="columnasLiga" class="columns">
+                <ui:VisualElement name="columnaEquipos" class="column columnLeft">
+                    <ui:Label text="TABLA DE POSICIONES" class="columnTitle" />
+                    <ui:VisualElement class="tableHeader">
+                        <ui:Label text="EQUIPO" class="table tableName" />
+                        <ui:Label text="PJ" class="table tableNum" />
+                        <ui:Label text="PG" class="table tableNum" />
+                        <ui:Label text="PE" class="table tableNum" />
+                        <ui:Label text="PP" class="table tableNum" />
+                        <ui:Label text="PTS" class="table tablePts" />
                     </ui:VisualElement>
-                    <ui:ScrollView name="teamsList" mode="Vertical" />
-                    <ui:VisualElement>
-                        <ui:VisualElement>
-                            <ui:Label name="lblTeamsCount" text="Equipos mostrados: 10" />
-                            <ui:Slider name="sliderTeamsCount" low-value="1" high-value="10" value="10" page-size="1" />
+                    <ui:ScrollView name="teamsList" mode="Vertical" class="teams-list" />
+                    <ui:VisualElement class="slidersPanel">
+                        <ui:VisualElement class="sliderRow">
+                            <ui:Label name="lblTeamsCount" text="Equipos mostrados: 10" class="sliderLabel" />
+                            <ui:Slider name="sliderTeamsCount" low-value="1" high-value="10" value="10" page-size="1" class="gameSlider" />
                         </ui:VisualElement>
-                        <ui:VisualElement>
-                            <ui:Label name="lblTeamSize" text="Máx. convocados: 3" />
-                            <ui:Slider name="sliderTeamSize" low-value="1" high-value="5" value="3" page-size="1" />
+                        <ui:VisualElement class="sliderRow">
+                            <ui:Label name="lblTeamSize" text="Máx. convocados: 3" class="sliderLabel" />
+                            <ui:Slider name="sliderTeamSize" low-value="1" high-value="5" value="3" page-size="1" class="gameSlider" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="columnaStats">
-                    <ui:Label text="ESTADÍSTICAS" />
-                    <ui:VisualElement name="statsFilterBar">
-                        <ui:Button name="btnGoals" text=" Goleadores" />
-                        <ui:Button name="btnAssists" text=" Asistentes" />
-                        <ui:Button name="btnBoth" text=" Ambos" />
+                <ui:VisualElement name="columnaStats" class="column columnRight">
+                    <ui:Label text="ESTADÍSTICAS" class="columnTitle" />
+                    <ui:VisualElement name="statsFilterBar" class="filterBar">
+                        <ui:Button name="btnGoals" text=" Goleadores" class="filterBtn filterBtn--active" />
+                        <ui:Button name="btnAssists" text=" Asistentes" class="filterBtn" />
+                        <ui:Button name="btnBoth" text=" Ambos" class="filterBtn" />
                     </ui:VisualElement>
-                    <ui:VisualElement>
-                        <ui:Label text="JUGADOR" />
-                        <ui:Label text="EQUIPO" />
-                        <ui:Label text="GOL" />
-                        <ui:Label text="ASI" />
+                    <ui:VisualElement class="tableHeader">
+                        <ui:Label text="JUGADOR" class="table tableName" />
+                        <ui:Label text="EQUIPO" class="table tableTeam" />
+                        <ui:Label text="GOL" class="table tableNum" />
+                        <ui:Label text="ASI" class="table tableNum" />
                     </ui:VisualElement>
-                    <ui:ScrollView name="statsList" mode="Vertical" />
+                    <ui:ScrollView name="statsList" mode="Vertical" class="stats-list" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="tabConvocados">
-            <ui:VisualElement name="squadHeader">
-                <ui:Label name="squadTeamName" text="Selecciona un equipo en Liga" />
-                <ui:Label name="squadCountLabel" text="Convocados: 0 / 3" />
+        <ui:VisualElement name="tabConvocados" class="tabContent">
+            <ui:VisualElement name="squadHeader" class="squadHeader">
+                <ui:Label name="squadTeamName" text="Selecciona un equipo en Liga" class="squadTeamName" />
+                <ui:Label name="squadCountLabel" text="Convocados: 0 / 3" class="squadCount" />
             </ui:VisualElement>
-            <ui:VisualElement name="teamColumns">
-                <ui:VisualElement name="dropNoConvocados">
-                    <ui:Label text="  PLANTILLA" />
-                    <ui:Label text="Arrastra jugadores hacia Convocados →" />
-                    <ui:ScrollView name="listNoConvocados" mode="Vertical" />
+            <ui:VisualElement name="teamColumns" class="squadColumns">
+                <ui:VisualElement name="dropNoConvocados" class="dropZone dropZone--roster">
+                    <ui:Label text="  PLANTILLA" class="dropZone__title" />
+                    <ui:Label text="Arrastra jugadores hacia Convocados →" class="dropZone__hint" />
+                    <ui:ScrollView name="listNoConvocados" mode="Vertical" class="player-grid" />
                 </ui:VisualElement>
-                <ui:VisualElement>
-                    <ui:Label text="⇄" />
+                <ui:VisualElement class="squadDivider">
+                    <ui:Label text="⇄" class="dividerArrow" />
                 </ui:VisualElement>
-                <ui:VisualElement name="dropConvocados">
-                    <ui:Label text="  CONVOCADOS" />
-                    <ui:Label text="← Arrastra aquí para convocar" />
-                    <ui:ScrollView name="listConvocados" mode="Vertical" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="tabEditor">
-            <ui:VisualElement name="editorColumns">
-                <ui:VisualElement name="colLeftEdit">
-                    <ui:Label text="EQUIPO SELECCIONADO" />
-                    <ui:VisualElement>
-                        <ui:Label text="Nombre del equipo:" />
-                        <ui:TextField name="tf-team-name" placeholder-text="Nombre del equipo..." />
-                        <ui:Button name="btnSaveTeam" text=" Guardar" />
-                    </ui:VisualElement>
-                    <ui:Label text="JUGADORES" />
-                    <ui:ScrollView name="editorPlayerlist" mode="Vertical" />
-                </ui:VisualElement>
-                <ui:VisualElement name="colRightEdit">
-                    <ui:Label text="ATRIBUTOS DEL JUGADOR" />
-                    <ui:VisualElement name="playerEditorPanel">
-                        <ui:VisualElement>
-                            <ui:Label name="editPlayerName" text="—  Selecciona un jugador" />
-                            <ui:Label name="editPlayerPos" />
-                        </ui:VisualElement>
-                        <ui:VisualElement name="statBarsContainer" />
-                        <ui:VisualElement name="attr-editors">
-                            <ui:VisualElement>
-                                <ui:Label text="Velocidad" />
-                                <ui:SliderInt name="speed" low-value="1" high-value="99" value="50" />
-                            </ui:VisualElement>
-                            <ui:VisualElement>
-                                <ui:Label text="Resistencia" />
-                                <ui:SliderInt name="stamina" low-value="1" high-value="99" value="50" />
-                            </ui:VisualElement>
-                            <ui:VisualElement>
-                                <ui:Label text="Defensa" />
-                                <ui:SliderInt name="defense" low-value="1" high-value="99" value="50" />
-                            </ui:VisualElement>
-                            <ui:VisualElement>
-                                <ui:Label text="Ataque" />
-                                <ui:SliderInt name="attack" low-value="1" high-value="99" value="50" />
-                            </ui:VisualElement>
-                            <ui:VisualElement>
-                                <ui:Label text="Goles" />
-                                <ui:SliderInt name="goals" low-value="0" high-value="50" value="0" />
-                            </ui:VisualElement>
-                            <ui:VisualElement>
-                                <ui:Label text="Asistencias" />
-                                <ui:SliderInt name="assists" low-value="0" high-value="50" value="0" />
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                        <ui:Button name="btnSavePlayer" text="  Guardar Jugador" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="editorEmptyState">
-                        <ui:Label text="P" />
-                        <ui:Label text="Selecciona un jugador de la lista izquierda para editar sus atributos" />
-                    </ui:VisualElement>
+                <ui:VisualElement name="dropConvocados" class="dropZone dropZone--callup">
+                    <ui:Label text="  CONVOCADOS" class="dropZone__title" />
+                    <ui:Label text="← Arrastra aquí para convocar" class="dropZone__hint" />
+                    <ui:ScrollView name="listConvocados" mode="Vertical" class="player-grid" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement>
-            <ui:Button name="btnSaveAll" text="  GUARDAR TODO" />
-            <ui:Label name="footerStatus" />
+        <ui:VisualElement name="tabEditor" class="tabContent">
+            <ui:VisualElement name="editorColumns" class="columns">
+                <ui:VisualElement name="colLeftEdit" class="column columnLeft">
+                    <ui:Label text="EQUIPO SELECCIONADO" class="columnTitle" />
+                    <ui:VisualElement class="team-name-editor">
+                        <ui:Label text="Nombre del equipo:" class="field-label" />
+                        <ui:TextField name="tf-team-name" placeholder-text="Nombre del equipo..." class="game-textfield" />
+                        <ui:Button name="btnSaveTeam" text=" Guardar" class="btn btn--primary btn--small" />
+                    </ui:VisualElement>
+                    <ui:Label text="JUGADORES" class="subsection-title" />
+                    <ui:ScrollView name="editorPlayerlist" mode="Vertical" class="editor-player-list" />
+                </ui:VisualElement>
+                <ui:VisualElement name="colRightEdit" class="column columnRight">
+                    <ui:Label text="ATRIBUTOS DEL JUGADOR" class="columnTitle" />
+                    <ui:VisualElement name="playerEditorPanel" class="player-editor-panel">
+                        <ui:VisualElement class="player-editor__hero">
+                            <ui:Label name="editPlayerName" text="—  Selecciona un jugador" class="player-editor__name" />
+                            <ui:Label name="editPlayerPos" class="player-editor__pos" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="statBarsContainer" class="stat-bars" />
+                        <ui:VisualElement name="attr-editors" class="attr-editors">
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Velocidad" class="attr-label" />
+                                <ui:SliderInt name="speed" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Resistencia" class="attr-label" />
+                                <ui:SliderInt name="stamina" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Defensa" class="attr-label" />
+                                <ui:SliderInt name="defense" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Ataque" class="attr-label" />
+                                <ui:SliderInt name="attack" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Goles" class="attr-label" />
+                                <ui:SliderInt name="goals" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="attr-row">
+                                <ui:Label text="Asistencias" class="attr-label" />
+                                <ui:SliderInt name="assists" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:Button name="btnSavePlayer" text="  Guardar Jugador" class="btn btn--primary btn--large" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="editorEmptyState" class="empty-state">
+                        <ui:Label text="P" class="empty-state__icon" />
+                        <ui:Label text="Selecciona un jugador de la lista izquierda para editar sus atributos" class="empty-state__msg" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="footer">
+            <ui:Button name="btnSaveAll" text="  GUARDAR TODO" class="btn btn--secondary" />
+            <ui:Label name="footerStatus" class="footer__status" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
