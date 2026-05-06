@@ -1,37 +1,136 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="Team" src="project://database/Assets/Resources/Team.uxml?fileID=9197481963319205126&amp;guid=0cac064f4803f9143a0ddf67e9ddbab5&amp;type=3#Team" />
-    <Style src="project://database/Assets/UIToolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=a3a55d2d9dbf3534cbb54504038b6108&amp;type=3#Proyect" />
-    <ui:VisualElement name="Proyect" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 100%; height: 100%; -unity-background-image-tint-color: rgb(255, 255, 255); display: flex;">
-        <ui:VisualElement name="Up" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 60%; flex-direction: row;">
-            <ui:VisualElement name="League" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 100%;">
-                <ui:VisualElement name="Table" style="flex-grow: 1; background-color: rgb(125, 125, 125); width: 100%; height: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; scale: 0.95 0.95; align-items: stretch; justify-content: center;">
-                    <ui:Instance template="Team" name="Team" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=9aa01882ddaf7874da3443e51e6dc084&amp;type=3#Proyect" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="header">
+            <ui:Label name="headerTitle" text="LIGA MANAGER" />
+            <ui:Label name="headerLeague" text="Primera División" />
+        </ui:VisualElement>
+        <ui:VisualElement name="tabs">
+            <ui:Button name="tabLigaButton" text="  Liga" />
+            <ui:Button name="tabConvocados" text="  Convocados" />
+            <ui:Button name="tabEditor" text="  Editor" />
+            <ui:VisualElement name="tabIndicator" />
+        </ui:VisualElement>
+        <ui:VisualElement name="tabLiga">
+            <ui:VisualElement name="columnasLiga">
+                <ui:VisualElement name="columnaEquipos">
+                    <ui:Label text="TABLA DE POSICIONES" />
+                    <ui:VisualElement>
+                        <ui:Label text="EQUIPO" />
+                        <ui:Label text="PJ" />
+                        <ui:Label text="PG" />
+                        <ui:Label text="PE" />
+                        <ui:Label text="PP" />
+                        <ui:Label text="PTS" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="teamsList" mode="Vertical" />
+                    <ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label name="lblTeamsCount" text="Equipos mostrados: 10" />
+                            <ui:Slider name="sliderTeamsCount" low-value="1" high-value="10" value="10" page-size="1" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label name="lblTeamSize" text="Máx. convocados: 3" />
+                            <ui:Slider name="sliderTeamSize" low-value="1" high-value="5" value="3" page-size="1" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="Stats" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 100%; flex-direction: row;">
-                <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 30%; height: 100%; justify-content: center; align-items: center; flex-shrink: 1; flex-basis: auto; flex-wrap: nowrap;">
-                    <ui:Button text="Goals" display-tooltip-when-elided="true" name="Goals" style="width: 90%; height: 25%; transform-origin: top; translate: 0 -15%;" />
-                    <ui:Button text="Assists" display-tooltip-when-elided="true" name="Assist" style="height: 25%; width: 90%; transform-origin: center; translate: 0 0;" />
-                    <ui:Button text="Goal/Assists" display-tooltip-when-elided="true" name="GA" style="transform-origin: bottom; width: 90%; height: 25%; translate: 0 15%;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="MaxGA" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 70%; height: 100%;">
-                    <ui:VisualElement name="Table" style="flex-grow: 0; background-color: rgb(125, 125, 125); width: 100%; height: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; scale: 0.95 0.85; display: flex; flex-shrink: 1; align-items: center; justify-content: center;" />
+                <ui:VisualElement name="columnaStats">
+                    <ui:Label text="ESTADÍSTICAS" />
+                    <ui:VisualElement name="statsFilterBar">
+                        <ui:Button name="btnGoals" text=" Goleadores" />
+                        <ui:Button name="btnAssists" text=" Asistentes" />
+                        <ui:Button name="btnBoth" text=" Ambos" />
+                    </ui:VisualElement>
+                    <ui:VisualElement>
+                        <ui:Label text="JUGADOR" />
+                        <ui:Label text="EQUIPO" />
+                        <ui:Label text="GOL" />
+                        <ui:Label text="ASI" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="statsList" mode="Vertical" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Down" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; height: 40%;">
-            <ui:VisualElement name="Sliders" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 65%; height: 100%; justify-content: center;">
-                <ui:SliderInt picking-mode="Ignore" label="Teams" value="2" high-value="8" low-value="2" name="Team" style="-unity-text-align: upper-center;" />
-                <ui:SliderInt picking-mode="Ignore" label="Players per team" value="5" high-value="11" low-value="5" name="Players" style="-unity-text-align: upper-center;" />
-                <ui:Slider picking-mode="Ignore" label="Color" value="42" high-value="100" name="Color" style="-unity-text-align: upper-center;" />
+        <ui:VisualElement name="tabConvocados">
+            <ui:VisualElement name="squadHeader">
+                <ui:Label name="squadTeamName" text="Selecciona un equipo en Liga" />
+                <ui:Label name="squadCountLabel" text="Convocados: 0 / 3" />
             </ui:VisualElement>
-            <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 35%; height: 100%;">
-                <ui:VisualElement name="SaveLoad" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 100%; height: 50%; align-items: center; justify-content: center; align-self: flex-end;">
-                    <ui:Button text="Save" display-tooltip-when-elided="true" name="Save" style="width: 40%; height: 80%; white-space: nowrap; -unity-text-align: middle-center; transform-origin: left; translate: -10% 0;" />
-                    <ui:Button text="Load" display-tooltip-when-elided="true" name="Load" style="width: 40%; height: 80%; transform-origin: right; translate: 10% 0;" />
+            <ui:VisualElement name="teamColumns">
+                <ui:VisualElement name="dropNoConvocados">
+                    <ui:Label text="  PLANTILLA" />
+                    <ui:Label text="Arrastra jugadores hacia Convocados →" />
+                    <ui:ScrollView name="listNoConvocados" mode="Vertical" />
                 </ui:VisualElement>
-                <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 50%;" />
+                <ui:VisualElement>
+                    <ui:Label text="⇄" />
+                </ui:VisualElement>
+                <ui:VisualElement name="dropConvocados">
+                    <ui:Label text="  CONVOCADOS" />
+                    <ui:Label text="← Arrastra aquí para convocar" />
+                    <ui:ScrollView name="listConvocados" mode="Vertical" />
+                </ui:VisualElement>
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="tabEditor">
+            <ui:VisualElement name="editorColumns">
+                <ui:VisualElement name="colLeftEdit">
+                    <ui:Label text="EQUIPO SELECCIONADO" />
+                    <ui:VisualElement>
+                        <ui:Label text="Nombre del equipo:" />
+                        <ui:TextField name="tf-team-name" placeholder-text="Nombre del equipo..." />
+                        <ui:Button name="btnSaveTeam" text=" Guardar" />
+                    </ui:VisualElement>
+                    <ui:Label text="JUGADORES" />
+                    <ui:ScrollView name="editorPlayerlist" mode="Vertical" />
+                </ui:VisualElement>
+                <ui:VisualElement name="colRightEdit">
+                    <ui:Label text="ATRIBUTOS DEL JUGADOR" />
+                    <ui:VisualElement name="playerEditorPanel">
+                        <ui:VisualElement>
+                            <ui:Label name="editPlayerName" text="—  Selecciona un jugador" />
+                            <ui:Label name="editPlayerPos" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="statBarsContainer" />
+                        <ui:VisualElement name="attr-editors">
+                            <ui:VisualElement>
+                                <ui:Label text="Velocidad" />
+                                <ui:SliderInt name="speed" low-value="1" high-value="99" value="50" />
+                            </ui:VisualElement>
+                            <ui:VisualElement>
+                                <ui:Label text="Resistencia" />
+                                <ui:SliderInt name="stamina" low-value="1" high-value="99" value="50" />
+                            </ui:VisualElement>
+                            <ui:VisualElement>
+                                <ui:Label text="Defensa" />
+                                <ui:SliderInt name="defense" low-value="1" high-value="99" value="50" />
+                            </ui:VisualElement>
+                            <ui:VisualElement>
+                                <ui:Label text="Ataque" />
+                                <ui:SliderInt name="attack" low-value="1" high-value="99" value="50" />
+                            </ui:VisualElement>
+                            <ui:VisualElement>
+                                <ui:Label text="Goles" />
+                                <ui:SliderInt name="goals" low-value="0" high-value="50" value="0" />
+                            </ui:VisualElement>
+                            <ui:VisualElement>
+                                <ui:Label text="Asistencias" />
+                                <ui:SliderInt name="assists" low-value="0" high-value="50" value="0" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:Button name="btnSavePlayer" text="  Guardar Jugador" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="editorEmptyState">
+                        <ui:Label text="P" />
+                        <ui:Label text="Selecciona un jugador de la lista izquierda para editar sus atributos" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement>
+            <ui:Button name="btnSaveAll" text="  GUARDAR TODO" />
+            <ui:Label name="footerStatus" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
