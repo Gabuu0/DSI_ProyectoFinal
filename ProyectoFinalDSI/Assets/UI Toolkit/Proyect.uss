@@ -57,7 +57,7 @@
 }
 
 .buttonTab:hover {
-    color: #c0cce0;
+    color: #FFAF00;
     background-color: rgba(255,255,255,0.04);
     cursor: link;
 }
@@ -167,9 +167,9 @@
 }
 
 .filterBtn:hover {
-    background-color: #1e2a40;
-    color: #f0f4f8;
-    border-color: rgba(0,212,170,0.3);
+    background-color: #FFAF00;
+    color: #ffffff;
+    border-color: #ffffff;
     cursor: link;
 }
 
@@ -208,7 +208,7 @@
 }
 
 .gameSlider #unity-tracker {
-    background-color: #FF8200;
+    background-color: #CCCCCC;
     border-radius: 4px;
     height: 6px;
 }
@@ -222,14 +222,14 @@
     width: 16px;
     height: 16px;
     border-radius: 8px;
-    background-color: #FFAF00;
+    background-color: #CCCCCC;
     border-width: 2px;
     border-color: #999999;
     margin-top: -5px;
 }
 
 .gameSlider #unity-dragger:hover {
-    background-color: #00f5c4;
+    background-color: #FFAF00;
     scale: 1.15;
 }
 
@@ -471,7 +471,7 @@
 }
 
 .btn--primary:hover {
-    background-color: #00f5c4;
+    background-color: #FFAF00;
 }
 
 .btn--secondary {
@@ -483,7 +483,10 @@
 }
 
 .btn--secondary:hover {
-    background-color: rgba(0,212,170,0.18);
+    background-color: #FFAF00;
+    color: #FFFFFF;
+    border-color: #CCCCCC;
+    cursor: link;
 }
 
 .btn--small  { padding: 6px 12px; font-size: 11px; }
@@ -569,7 +572,7 @@
 }
 
 .team-row:hover {
-    background-color: #1e2a40;
+    background-color: #999999;
     cursor: link;
 }
 
@@ -623,3 +626,21 @@
 .team-row--first  { background-color: rgba(245,158,11,0.08); }
 .team-row--second { background-color: rgba(156,163,175,0.06); }
 .team-row--third  { background-color: rgba(180,100,50,0.06); }
+
+.stat-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 8px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    background-color: #CCCCCC;
+}
+
+.stat-row:hover {
+    background-color: #999999;
+}
+
+.stat-row__rank   { color: #f59e0b; font-size: 11px; width: 20px; -unity-text-align: upper-center; -unity-font-style: bold; }
+.stat-row__player { flex: 3; color: #f0f4f8; font-size: 12px; -unity-font-style: bold; }
+.stat-row__team   { flex: 2; color: #000000; font-size: 11px; }
+.stat-row__num    { flex: 1; color: #000000; font-size: 12px; -unity-font-style: bold; -unity-text-align: upper-center; }

@@ -1,4 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="TeamRowTemplate" src="project://database/Assets/UI%20Toolkit/Template/TeamRowTemplate.uxml?fileID=9197481963319205126&amp;guid=cbe91dbb4507a834585549ddac0165a1&amp;type=3#TeamRowTemplate" />
+    <ui:Template name="StatRowTemplate" src="project://database/Assets/UI%20Toolkit/Template/StatRowTemplate.uxml?fileID=9197481963319205126&amp;guid=8ba18c9575594954fbefec2fd66b7630&amp;type=3#StatRowTemplate" />
     <Style src="project://database/Assets/UI%20Toolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=9aa01882ddaf7874da3443e51e6dc084&amp;type=3#Proyect" />
     <ui:VisualElement name="root" class="root">
         <ui:VisualElement name="header" class="header">
@@ -16,14 +18,16 @@
                 <ui:VisualElement name="columnaEquipos" class="column columnLeft">
                     <ui:Label text="TABLA DE POSICIONES" class="columnTitle" />
                     <ui:VisualElement class="tableHeader">
-                        <ui:Label text="EQUIPO" class="table tableName" />
-                        <ui:Label text="PJ" class="table tableNum" />
-                        <ui:Label text="PG" class="table tableNum" />
-                        <ui:Label text="PE" class="table tableNum" />
-                        <ui:Label text="PP" class="table tableNum" />
-                        <ui:Label text="PTS" class="table tablePts" />
+                        <ui:Label text="EQUIPO" class="table tableName" style="width: 50%; height: 80%;" />
+                        <ui:Label text="PJ" class="table tableNum" style="width: 10%;" />
+                        <ui:Label text="PG" class="table tableNum" style="width: 10%;" />
+                        <ui:Label text="PE" class="table tableNum" style="width: 10%;" />
+                        <ui:Label text="PP" class="table tableNum" style="width: 10%;" />
+                        <ui:Label text="PTS" class="table tablePts" style="width: 10%;" />
                     </ui:VisualElement>
-                    <ui:ScrollView name="teamsList" mode="Vertical" class="teams-list" />
+                    <ui:ScrollView name="teamsList" mode="Vertical" class="teams-list" style="width: 100%; height: 0;">
+                        <ui:Instance template="TeamRowTemplate" name="TeamRowTemplate" />
+                    </ui:ScrollView>
                     <ui:VisualElement class="slidersPanel">
                         <ui:VisualElement class="sliderRow">
                             <ui:Label name="lblTeamsCount" text="Equipos mostrados: 10" class="sliderLabel" />
@@ -48,7 +52,9 @@
                         <ui:Label text="GOL" class="table tableNum" />
                         <ui:Label text="ASI" class="table tableNum" />
                     </ui:VisualElement>
-                    <ui:ScrollView name="statsList" mode="Vertical" class="stats-list" />
+                    <ui:ScrollView name="statsList" mode="Vertical" class="stats-list" style="width: 100%;">
+                        <ui:Instance template="StatRowTemplate" name="StatRowTemplate" />
+                    </ui:ScrollView>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
@@ -128,9 +134,8 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement class="footer">
+        <ui:VisualElement name="Footer" class="footer">
             <ui:Button name="btnSaveAll" text="  GUARDAR TODO" class="btn btn--secondary" />
-            <ui:Label name="footerStatus" class="footer__status" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

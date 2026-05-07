@@ -2,12 +2,12 @@
     <Style src="project://database/Assets/UI%20Toolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=9aa01882ddaf7874da3443e51e6dc084&amp;type=3#Proyect" />
     <ui:VisualElement name="team-row" class="team-row">
         <ui:VisualElement name="team-color-bar" class="team-row__color-bar" />
-        <ui:Label name="team-pos" text="#" class="team-row__pos" />
-        <ui:Label name="team-name" text="Nombre" class="team-row__name" />
-        <ui:Label name="team-pj" text="0" class="team-row__num" />
-        <ui:Label name="team-pg" text="0" class="team-row__num" />
-        <ui:Label name="team-pe" text="0" class="team-row__num" />
-        <ui:Label name="team-pp" text="0" class="team-row__num" />
-        <ui:Label name="team-pts" text="0" class="team-row__pts" />
+        <ui:Label name="team-pos" text="#" class="team-row__pos" style="width: 3%; height: 80%;" />
+        <ui:Label name="team-name" text="Nombre" class="team-row__name" style="width: 40%; height: 80%;" />
+        <ui:Label name="team-pj" text="0" class="team-row__num" style="width: 10%; height: 80%;" />
+        <ui:Label name="team-pg" text="0" class="team-row__num" style="width: 10%; height: 80%;" />
+        <ui:Label name="team-pe" text="0" class="team-row__num" style="width: 10%; height: 80%;" />
+        <ui:Label name="team-pp" text="0" class="team-row__num" style="width: 10%; height: 80%;" />
+        <ui:Label name="team-pts" text="0" class="team-row__pts" style="width: 10%; height: 80%;" />
     </ui:VisualElement>
 </ui:UXML>
