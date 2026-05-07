@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Proyect.uss?fileID=7433441132597879392&amp;guid=9aa01882ddaf7874da3443e51e6dc084&amp;type=3#Proyect" />
+    <ui:VisualElement name="player-card" class="player-card">
+        <ui:VisualElement class="player-card__header">
+            <ui:Label name="player-pos-badge" text="MID" class="player-card__pos" />
+            <ui:Label name="player-rating" text="75" class="player-card__rating" />
+        </ui:VisualElement>
+        <ui:Label name="player-name" text="Nombre Jugador" class="player-card__name" />
+        <ui:VisualElement class="player-card__stats">
+            <ui:VisualElement class="mini-stat">
+                <ui:Label text="VEL" class="mini-stat__label" />
+                <ui:Label name="player-speed" text="—" class="mini-stat__value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-stat">
+                <ui:Label text="ATQ" class="mini-stat__label" />
+                <ui:Label name="player-attack" text="—" class="mini-stat__value" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mini-stat">
+                <ui:Label text="DEF" class="mini-stat__label" />
+                <ui:Label name="player-defense" text="—" class="mini-stat__value" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="player-card__drag-hint">
+            <ui:Label text="⠿" class="drag-hint-icon" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
