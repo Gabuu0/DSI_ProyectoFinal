@@ -9,8 +9,8 @@
         </ui:VisualElement>
         <ui:VisualElement name="tabs" class="barraTab">
             <ui:Button name="tabLigaButton" text="  Liga" class="buttonTab buttonTab--active" style="color: rgb(255, 175, 0); border-bottom-color: rgb(255, 175, 0);" />
-            <ui:Button name="tabConvocados" text="  Convocados" class="buttonTab" />
-            <ui:Button name="tabEditor" text="  Editor" class="buttonTab" />
+            <ui:Button name="tabConvocadosButton" text="  Convocados" class="buttonTab" />
+            <ui:Button name="tabEditorButton" text="  Editor" class="buttonTab" />
             <ui:VisualElement name="tabIndicator" class="tab-indicator" />
         </ui:VisualElement>
         <ui:VisualElement name="tabLiga" class="tabContent tabContent--active">
@@ -102,27 +102,27 @@
                         <ui:VisualElement name="attr-editors" class="attr-editors">
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Velocidad" class="attr-label" />
-                                <ui:SliderInt name="speed" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="speed" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Resistencia" class="attr-label" />
-                                <ui:SliderInt name="stamina" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="stamina" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Defensa" class="attr-label" />
-                                <ui:SliderInt name="defense" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="defense" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Ataque" class="attr-label" />
-                                <ui:SliderInt name="attack" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="attack" low-value="1" high-value="99" value="50" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Goles" class="attr-label" />
-                                <ui:SliderInt name="goals" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="goals" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                             <ui:VisualElement class="attr-row">
                                 <ui:Label text="Asistencias" class="attr-label" />
-                                <ui:SliderInt name="assists" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" />
+                                <ui:SliderInt name="assists" low-value="0" high-value="50" value="0" class="gameSlider attrSlider" style="width: 75%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:Button name="btnSavePlayer" text="  Guardar Jugador" class="btn btn--primary btn--large" />
